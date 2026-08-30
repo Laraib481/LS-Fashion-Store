@@ -1,0 +1,19 @@
+# Environment variables (Secrets & Tokens)
+.env
+.env.local
+.env.production
+.env.development
+
+# Heavy dependencies folder
+node_modules/
+
+# Production build output folders
+dist/
+build/
+
+# System & Editor temporary files
+.DS_Store
+.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
