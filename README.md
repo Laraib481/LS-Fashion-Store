@@ -1,16 +1,50 @@
-# React + Vite
+# 🛍️ LS Fashion Store | Premium E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vercel Deployment](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Shopify](https://img.shields.io/badge/Shopify_Storefront_API-96BF48?style=for-the-badge&logo=shopify&logoColor=white)
 
-Currently, two official plugins are available:
+LS Fashion Store is a state-of-the-art, high-performance web application engineered for luxury fashion retail. Featuring modern glassmorphism UI aesthetics, dynamic collection filtering, and seamless real-time integration with the **Shopify Storefront API**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Experience the live storefront with real-time checkout and dynamic inventory synchronization:
 
-## Expanding the ESLint configuration
+🔗 **[Visit LS Fashion Store Live](https://YOUR-VERCEL-DEPLOYMENT-URL.vercel.app)** *(Replace with your actual Vercel URL)*
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Highlights & Key Features
+
+* 👗 **Dynamic Collection Filtering:** URL-driven state parameters supporting seamless navigation across **Unstitched**, **Western Wear**, **Accessories**, **Footwear**, and **Fragrances**.
+* ⚡ **Headless Shopify Integration:** Direct GraphQL/REST Storefront API integration fetching real-time product data, variants, pricing, and stock status.
+* 🎨 **Contemporary Aesthetic:** Designed with sleek glassmorphic overlays, vibrant high-resolution visual sliders, and responsive typography tailored for luxury retail.
+* 🛒 **Interactive Slide-Over Cart:** Client-side cart state management allowing fast product management and smooth shopping transitions.
+* 📱 **Mobile-First Responsive Layout:** Fluid layouts engineered for desktop browsers, tablets, and mobile screens.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend Framework** | React.js (Powered by Vite) |
+| **Styling Framework** | Tailwind CSS + Custom Utility Classes |
+| **Routing** | React Router DOM v6 |
+| **Backend & CMS** | Headless Shopify Storefront API |
+| **Deployment & Hosting**| Vercel Engine (Client Routing Rewrites Enabled) |
+
+---
+
+## 📂 System Architecture Overview
+
+```text
+src/
+ ├── assets/          # Static branding assets, icons, and hero slider images
+ ├── components/      # Reusable UI components (Navbar, CartDrawer, HeroSlider, Footer)
+ ├── pages/           # Application views (HomePage, ShopPage, ProductDetail)
+ ├── services/        # Shopify Storefront API fetchers and GraphQL queries
+ └── App.jsx          # Root layout and client-side routing definitions
