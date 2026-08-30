@@ -13,7 +13,7 @@ LS Fashion Store is a state-of-the-art, high-performance web application enginee
 
 Experience the live storefront with real-time checkout and dynamic inventory synchronization:
 
-🔗 **[Visit LS Fashion Store Live](https://YOUR-VERCEL-DEPLOYMENT-URL.vercel.app)** *(Replace with your actual Vercel URL)*
+🔗 **[Visit LS Fashion Store Live](https://ls-fashion-store.netlify.app)** *(Replace with your actual Vercel URL)*
 
 ---
 
