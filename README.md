@@ -13,7 +13,7 @@ LS Fashion Store is a state-of-the-art, high-performance web application enginee
 
 Experience the live storefront with real-time checkout and dynamic inventory synchronization:
 
-🔗 **[Visit LS Fashion Store Live](https://ls-fashion-store.netlify.app)** *(Replace with your actual Vercel URL)*
+🔗 **[Visit LS Fashion Store Live](https://ls-fashion-store.netlify.app)** 
 
 ---
 
@@ -35,7 +35,7 @@ Experience the live storefront with real-time checkout and dynamic inventory syn
 | **Styling Framework** | Tailwind CSS + Custom Utility Classes |
 | **Routing** | React Router DOM v6 |
 | **Backend & CMS** | Headless Shopify Storefront API |
-| **Deployment & Hosting**| Vercel Engine (Client Routing Rewrites Enabled) |
+| **Deployment & Hosting**| netlify
 
 ---
 
