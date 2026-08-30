@@ -58,8 +58,14 @@ const MainProductShowcase = ({
 
   const handleAction = () => {
     const activeHandle = collection?.handle || collectionHandle;
-    // Navigates to /shop?collection=western-wear
     navigate(`/shop?collection=${encodeURIComponent(activeHandle)}`);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleAction();
+    }
   };
 
   if (loading) {
@@ -84,7 +90,7 @@ const MainProductShowcase = ({
     "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80";
 
   const displayTitle = collection?.title || "Western Wear";
-  const displayDescription = collection?.description || "Explore our latest western collection designed for contemporary fashion and everyday comfort.";
+  const displayDescription = collection?.description || "Explore our latest collection designed for contemporary fashion and everyday comfort.";
 
   return (
     <section className="w-full bg-[#FAF8F5] overflow-hidden border-b border-stone-200/60">
@@ -92,12 +98,15 @@ const MainProductShowcase = ({
         
         {/* Left Side: Image */}
         <div 
+          role="button"
+          tabIndex={0}
           onClick={handleAction}
-          className="w-full h-[450px] md:h-[600px] overflow-hidden cursor-pointer"
+          onKeyDown={handleKeyDown}
+          className="w-full h-[450px] md:h-[600px] overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-400"
         >
           <img
             src={displayImage}
-            alt={displayTitle}
+            alt={collection?.image?.altText || displayTitle}
             className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
           />
         </div>
@@ -119,9 +128,9 @@ const MainProductShowcase = ({
           <button 
             type="button"
             onClick={handleAction}
-            className="px-7 py-3 bg-stone-900 text-white text-xs font-medium tracking-wider uppercase rounded-full hover:bg-stone-800 transition-all shadow-md"
+            className="px-7 py-3 bg-stone-900 text-white text-xs font-medium tracking-wider uppercase rounded-full hover:bg-stone-800 transition-all shadow-md active:scale-95"
           >
-            Shop Western Wear
+            Shop {displayTitle}
           </button>
         </div>
 

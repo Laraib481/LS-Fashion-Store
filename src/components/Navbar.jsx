@@ -4,13 +4,22 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = ({ onOpenMenu, onOpenSearch, onOpenCart, cartCount = 0 }) => {
   const navigate = useNavigate();
 
+  const handleLogoKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      navigate('/');
+    }
+  };
+
   return (
-    <nav className="fixed top-3 left-4 right-4 md:left-8 md:right-8 z-50 flex justify-between items-center px-6 py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-sm text-gray-900 transition-all">
+    <nav className="fixed top-3 left-4 right-4 md:left-8 md:right-8 z-50 flex justify-between items-center px-4 md:px-6 py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-sm text-gray-900 transition-all">
       
       {/* 2 Lines Header Button */}
       <button 
+        type="button"
         onClick={onOpenMenu}
-        className="text-gray-900 hover:opacity-75 transition-opacity focus:outline-none"
+        aria-label="Open Navigation Menu"
+        className="p-1 text-gray-900 hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-stone-400 rounded-lg"
         title="Menu"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,19 +30,24 @@ const Navbar = ({ onOpenMenu, onOpenSearch, onOpenCart, cartCount = 0 }) => {
 
       {/* Brand Logo */}
       <div 
+        role="button"
+        tabIndex={0}
         onClick={() => navigate('/')}
-        className="text-xl md:text-2xl font-semibold tracking-[0.2em] text-gray-900 cursor-pointer select-none"
+        onKeyDown={handleLogoKeyDown}
+        className="text-base sm:text-xl md:text-2xl font-semibold tracking-[0.2em] text-gray-900 cursor-pointer select-none text-center focus:outline-none focus:ring-2 focus:ring-stone-400 rounded-lg px-2"
       >
         LS FASHION STORE
       </div>
 
-      {/* Right Action Icons (Only Search & Cart) */}
-      <div className="flex items-center gap-4 md:gap-5 text-gray-900">
+      {/* Right Action Icons (Search & Cart) */}
+      <div className="flex items-center gap-3 md:gap-5 text-gray-900">
         
         {/* Search Icon */}
         <button 
+          type="button"
           onClick={onOpenSearch} 
-          className="hover:opacity-75 transition-opacity focus:outline-none"
+          aria-label="Open Search"
+          className="p-1 hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-stone-400 rounded-lg"
           title="Search"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -42,10 +56,12 @@ const Navbar = ({ onOpenMenu, onOpenSearch, onOpenCart, cartCount = 0 }) => {
           </svg>
         </button>
 
-        {/* Cart Icon with Dynamic Red Badge */}
+        {/* Cart Icon with Dynamic Badge */}
         <button 
+          type="button"
           onClick={onOpenCart}
-          className="relative hover:opacity-75 transition-opacity focus:outline-none"
+          aria-label={`Shopping Cart with ${cartCount} items`}
+          className="relative p-1 hover:opacity-75 transition-opacity focus:outline-none focus:ring-2 focus:ring-stone-400 rounded-lg"
           title="Cart"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -54,9 +70,9 @@ const Navbar = ({ onOpenMenu, onOpenSearch, onOpenCart, cartCount = 0 }) => {
             <path d="M16 10a4 4 0 0 1-8 0"/>
           </svg>
 
-          {/* Red Badge Dot */}
+          {/* Dynamic Badge */}
           {cartCount > 0 && (
-            <span className="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse shadow-sm">
+            <span className="absolute -top-1 -right-1.5 bg-red-600 text-white text-[10px] font-bold min-w-4 h-4 px-1 rounded-full flex items-center justify-center leading-none shadow-sm">
               {cartCount > 9 ? '9+' : cartCount}
             </span>
           )}

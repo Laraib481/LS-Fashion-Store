@@ -34,7 +34,6 @@ const GET_PRODUCTS_BY_COLLECTION = `
   }
 `;
 
-// Updated Tabs list
 const tabsConfig = [
   { label: "ACCESSORIES", handle: "accessories" },
   { label: "UNSTITCHED", handle: "unstitched" },
@@ -42,111 +41,26 @@ const tabsConfig = [
   { label: "HEELS", handle: "heels" }
 ];
 
-// Fallback products matching each specific category
 const fallbackProductsData = {
   "accessories": [
-    {
-      id: "acc-1",
-      title: "Luxury Leather Handbag",
-      price: "4,250",
-      currency: "PKR",
-      badge: "NEW",
-      image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "acc-2",
-      title: "Minimalist Gold Sunglasses",
-      price: "2,100",
-      currency: "PKR",
-      badge: "HOT",
-      image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "acc-3",
-      title: "Elegance Pearl Pendant",
-      price: "1,850",
-      currency: "PKR",
-      badge: "BEST SELLER",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
-    }
+    { id: "acc-1", handle: "luxury-leather-handbag", title: "Luxury Leather Handbag", price: "4,250", currency: "PKR", badge: "NEW", image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" },
+    { id: "acc-2", handle: "minimalist-gold-sunglasses", title: "Minimalist Gold Sunglasses", price: "2,100", currency: "PKR", badge: "HOT", image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" },
+    { id: "acc-3", handle: "elegance-pearl-pendant", title: "Elegance Pearl Pendant", price: "1,850", currency: "PKR", badge: "BEST SELLER", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" }
   ],
   "unstitched": [
-    {
-      id: "uns-1",
-      title: "3-Piece Embroidered Lawn",
-      price: "6,990",
-      currency: "PKR",
-      badge: "BEST SELLER",
-      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "uns-2",
-      title: "2-Piece Digital Printed Lawn",
-      price: "4,500",
-      currency: "PKR",
-      badge: "NEW",
-      image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "uns-3",
-      title: "3-Piece Luxury Chiffon Suit",
-      price: "8,800",
-      currency: "PKR",
-      badge: "LUXURY",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80"
-    }
+    { id: "uns-1", handle: "3-piece-embroidered-lawn", title: "3-Piece Embroidered Lawn", price: "6,990", currency: "PKR", badge: "BEST SELLER", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" },
+    { id: "uns-2", handle: "2-piece-digital-printed-lawn", title: "2-Piece Digital Printed Lawn", price: "4,500", currency: "PKR", badge: "NEW", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" },
+    { id: "uns-3", handle: "3-piece-luxury-chiffon-suit", title: "3-Piece Luxury Chiffon Suit", price: "8,800", currency: "PKR", badge: "LUXURY", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" }
   ],
   "western-wear": [
-    {
-      id: "west-1",
-      title: "Oversized Denim Jacket",
-      price: "5,400",
-      currency: "PKR",
-      badge: "TRENDING",
-      image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "west-2",
-      title: "Classic Cotton Crop Shirt",
-      price: "2,990",
-      currency: "PKR",
-      badge: "HOT",
-      image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "west-3",
-      title: "Tailored Smart Blazer",
-      price: "7,200",
-      currency: "PKR",
-      badge: "EXCLUSIVE",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80"
-    }
+    { id: "west-1", handle: "oversized-denim-jacket", title: "Oversized Denim Jacket", price: "5,400", currency: "PKR", badge: "TRENDING", image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80" },
+    { id: "west-2", handle: "classic-cotton-crop-shirt", title: "Classic Cotton Crop Shirt", price: "2,990", currency: "PKR", badge: "HOT", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" },
+    { id: "west-3", handle: "tailored-smart-blazer", title: "Tailored Smart Blazer", price: "7,200", currency: "PKR", badge: "EXCLUSIVE", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80" }
   ],
   "heels": [
-    {
-      id: "heel-1",
-      title: "Classic Pointed Stiletto Heels",
-      price: "5,800",
-      currency: "PKR",
-      badge: "BEST SELLER",
-      image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "heel-2",
-      title: "Strappy Ankle Block Heels",
-      price: "4,600",
-      currency: "PKR",
-      badge: "NEW ARRIVAL",
-      image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "heel-3",
-      title: "Velvet Evening Pump Heels",
-      price: "6,200",
-      currency: "PKR",
-      badge: "POPULAR",
-      image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=800&q=80"
-    }
+    { id: "heel-1", handle: "classic-pointed-stiletto-heels", title: "Classic Pointed Stiletto Heels", price: "5,800", currency: "PKR", badge: "BEST SELLER", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80" },
+    { id: "heel-2", handle: "strappy-ankle-block-heels", title: "Strappy Ankle Block Heels", price: "4,600", currency: "PKR", badge: "NEW ARRIVAL", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80" },
+    { id: "heel-3", handle: "velvet-evening-pump-heels", title: "Velvet Evening Pump Heels", price: "6,200", currency: "PKR", badge: "POPULAR", image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=800&q=80" }
   ]
 };
 
@@ -160,6 +74,7 @@ const WomenSection = ({
   const navigate = useNavigate();
 
   useEffect(() => {
+    let isMounted = true;
     const fetchTabProducts = async () => {
       setLoading(true);
       try {
@@ -177,31 +92,32 @@ const WomenSection = ({
           image: node.images?.edges[0]?.node?.url || "https://via.placeholder.com/600x800"
         })) || [];
 
-        if (fetchedItems.length > 0) {
-          setProducts(fetchedItems);
-        } else {
-          setProducts(fallbackProductsData[activeTab.handle] || fallbackProductsData["accessories"]);
+        if (isMounted) {
+          if (fetchedItems.length > 0) {
+            setProducts(fetchedItems);
+          } else {
+            setProducts(fallbackProductsData[activeTab.handle] || fallbackProductsData["accessories"]);
+          }
         }
       } catch (err) {
         console.error("Error fetching section products:", err);
-        setProducts(fallbackProductsData[activeTab.handle] || fallbackProductsData["accessories"]);
+        if (isMounted) {
+          setProducts(fallbackProductsData[activeTab.handle] || fallbackProductsData["accessories"]);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) setLoading(false);
       }
     };
 
     fetchTabProducts();
+    return () => { isMounted = false; };
   }, [activeTab]);
 
   const handleProductClick = (item) => {
-    if (item.handle) {
-      navigate(`/product/${item.handle}`);
-    } else {
-      navigate(`/product/${item.id}`);
-    }
+    const routeParam = item.handle || item.id;
+    navigate(`/product/${routeParam}`);
   };
 
-  // Direct route to THAT SPECIFIC active collection
   const handleExploreClick = () => {
     navigate(`/shop?collection=${encodeURIComponent(activeTab.handle)}`);
   };
@@ -222,7 +138,7 @@ const WomenSection = ({
         </p>
       </div>
 
-      {/* Filter Navigation Tabs */}
+      {/* Navigation Tabs */}
       <div className="flex justify-center items-center gap-6 md:gap-10 border-b border-stone-200/80 max-w-2xl mx-auto mb-12 overflow-x-auto scrollbar-none">
         {tabsConfig.map((tab) => (
           <button
@@ -240,23 +156,21 @@ const WomenSection = ({
         ))}
       </div>
 
-      {/* 4-Column Responsive Grid */}
+      {/* 4-Column Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        
         {loading ? (
           [1, 2, 3, 4].map((n) => (
             <div key={n} className="aspect-[3/4] bg-stone-200/60 rounded-2xl animate-pulse" />
           ))
         ) : (
           <>
-            {/* Display First 3 Product Cards */}
+            {/* Products (First 3) */}
             {products.slice(0, 3).map((item) => (
               <div 
                 key={item.id} 
                 onClick={() => handleProductClick(item)}
                 className="group cursor-pointer flex flex-col"
               >
-                {/* Image Container */}
                 <div className="relative aspect-[3/4] bg-stone-100 overflow-hidden rounded-2xl border border-stone-200/80 mb-3">
                   <img
                     src={item.image}
@@ -280,7 +194,6 @@ const WomenSection = ({
                   </div>
                 </div>
 
-                {/* Info Text */}
                 <div className="px-1 text-center sm:text-left">
                   <h3 className="text-xs md:text-sm font-medium text-stone-900 truncate tracking-wide">
                     {item.title}
@@ -292,7 +205,7 @@ const WomenSection = ({
               </div>
             ))}
 
-            {/* 4th Card: Opens THAT Specific Active Collection Only */}
+            {/* 4th Card: Explore Collection */}
             <div 
               onClick={handleExploreClick}
               className="relative aspect-[3/4] bg-stone-900 overflow-hidden rounded-2xl group cursor-pointer border border-stone-800 shadow-md flex flex-col justify-between p-6"
@@ -324,7 +237,6 @@ const WomenSection = ({
             </div>
           </>
         )}
-
       </div>
     </section>
   );
